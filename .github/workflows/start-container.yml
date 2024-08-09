@@ -1,4 +1,4 @@
-name: Start Docker Container
+nme: Start Docker Container
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-and-run:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
     - name: Checkout code
@@ -27,3 +27,6 @@ jobs:
 
     - name: Run Docker container
       run: docker run -d --name my-container my-container:latest
+    
+    - name: Create Test File
+      run: touch test_file.txt
